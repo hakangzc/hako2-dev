@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sipariş Formu</title>
+    <style>
+        /* CSS buraya gelecek */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sipariş Formu</h1>
+        <nav>
+            <a href="page2.html">Müşteri Kaydı</a>
+            <a href="page3.html">Ürün Seçimi</a>
+            <a href="index.html">Ana Sayfa</a>
+        </nav>
+    </header>
+    <section>
+        <form id="order-form" onsubmit="saveOrderData(); return false;">
+            <label for="address">Adres:</label>
+            <textarea id="address" required></textarea><br><br>
+
+            <button type="submit">Siparişi Ver</button>
+        </form>
+        <h2>Siparişler</h2>
+        <ul id="order-list">
+            <!-- Siparişler buraya eklenecek -->
+        </ul>
+    </section>
+    <footer>
+        <p>&copy; 2025 Parfüm Mağazası</p>
+    </footer>
+
+    <script>
+        function saveOrderData() {
+            let address = document.getElementById('address').value;
+            let orderData = { address };
+            localStorage.setItem('orderData', JSON.stringify(orderData));
+
+            // Siparişi listeye ekle
+            let orderList = document.getElementById('order-list');
+            let listItem = document.createElement('li');
+            listItem.textContent = `Adres: ${address}`;
+            orderList.appendChild(listItem);
+        }
+
+        // Sayfa yüklendiğinde önceki veriyi göster
+        window.onload = function() {
+            let savedOrder = localStorage.getItem('orderData');
+            if (savedOrder) {
+                let orderData = JSON.parse(savedOrder);
+                let orderList = document.getElementById('order-list');

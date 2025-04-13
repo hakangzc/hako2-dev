@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Müşteri Kaydı</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #ff6f61;
+            padding: 20px 0;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            margin-top: 15px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 15px;
+            background-color: #ffb6b6;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background-color: white;
+            color: #ff6f61;
+        }
+
+        section {
+            padding: 40px;
+            text-align: center;
+            max-width: 700px;
+            margin: auto;
+            background-color: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        section h2 {
+            color: #d6336c;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #d6336c;
+        }
+
+        footer {
+            background-color: #ff6f61;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Parfüm Mağazası</h1>
+        <nav>
+            <a href="index.html">Ana Sayfa</a>
+            <a href="page3.html">Ürün Seçimi</a>
+            <a href="page4.html">Sipariş Formu</a>
+            <a href="page5.html">Yorumlar</a>
+            <a href="page6.html">İletişim</a>
+            <a href="page7.html">Hakkımızda</a>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Müşteri Kaydınızı Yapın</h2>
+        <form action="form-veri.html" method="GET">
+            <label>Ad Soyad: <input type="text" name="ad" required></label>
+            <label>Email: <input type="email" name="email" required></label>
+            <label>Telefon: <input type="tel" name="telefon" required></label>
+            <label>Adres: <textarea name="adres" required></textarea></label>
+            <input type="submit" value="Kaydı Tamamla">
+        </form>
+    </section>
+
+    <footer>
+        &copy; 2025 Parfüm Mağazası - Tüm Hakları Saklıdır.
+    </footer>
+</body>
+</html>

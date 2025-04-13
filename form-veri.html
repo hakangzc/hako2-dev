@@ -1,0 +1,13 @@
+<main>
+    <h2>Form Verileri</h2>
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const ad = urlParams.get('ad');
+      const email = urlParams.get('email');
+      const mesaj = urlParams.get('mesaj');
+  
+      document.write(`<p><strong>Ad:</strong> ${ad}</p>`);
+      document.write(`<p><strong>Email:</strong> ${email}</p>`);
+      document.write(`<p><strong>Mesaj:</strong> ${mesaj}</p>`);
+    </script>
+  </main>

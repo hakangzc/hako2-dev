@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ürün Seçimi</title>
+    <style>
+        /* CSS buraya gelecek */
+    </style>
+</head>
+<body>
+<img src="images (7).jpg" width="300">
+<img src="images (6).jpg" width="300">
+    <img src="images (5).jpg" width="300">
+<img src="images (4).jpg" width="200">
+    <img src="images (3).jpg" width="300">
+<img src="images (2).jpg" width="300">
+    <img src="images (1).jpg" width="200">
+    <img src="images.jpg" width="300">
+    <img src="indir.jpg" width="300">
+    <img src="indir2.jpg" width="300">
+    <img src="indir3.jpg" width="300">
+    <header>
+        <h1>Ürün Seçimi</h1>
+        <nav>
+            <a href="page2.html">Müşteri Kaydı</a>
+            <a href="index.html">Ana Sayfa</a>
+            <a href="page4.html">Sipariş Formu</a>
+        </nav>
+    </header>
+    <section>
+        <form id="product-form" onsubmit="saveProductData(); return false;">
+            <label for="product">Ürün Seçin:</label>
+            <select id="product" required>
+                <option value="Parfüm 1">Parfüm 1</option>
+                <option value="Parfüm 2">Parfüm 2</option>
+                <option value="Parfüm 3">Parfüm 3</option>
+            </select><br><br>
+
+            <button type="submit">Ürün Seç</button>
+        </form>
+        <h2>Seçilen Ürünler</h2>
+        <ul id="product-list">
+            <!-- Seçilen ürünler buraya eklenecek -->
+        </ul>
+    </section>
+    <footer>
+        <p>&copy; 2025 Parfüm Mağazası</p>
+    </footer>
+
+    <script>
+        function saveProductData() {
+            let product = document.getElementById('product').value;
+            let selectedProduct = { product };
+            localStorage.setItem('selectedProduct', JSON.stringify(selectedProduct));
+
+            // Ürünleri listeye ekle
+            let productList = document.getElementById('product-list');
+            let listItem = document.createElement('li');
+            listItem.textContent = product;
+            productList.appendChild(listItem);
+        }
+
+        // Sayfa yüklendiğinde önceki veriyi göster
+        window.onload = function() {
+            let savedProduct = localStorage.getItem('selectedProduct');
+            if (savedProduct) {
+                let productData = JSON.parse(savedProduct);
+                let productList = document.getElementById('product-list');
+                let listItem = document.createElement('li');
+                listItem.textContent = productData.product;
+                productList.appendChild(listItem);
+            }
+        };
+    </script>
+</body>
+</html>
