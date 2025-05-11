@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sipariş Ver</title>
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">Ana Sayfa</a></li>
+        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+        <li><a href="urunler.html">Ürünler</a></li>
+        <li><a href="yorumlar.html">Yorum Yap</a></li>
+        <li><a href="yorumlar-goster.html">Yorumlar</a></li>
+        <li><a href="kayit.html">Kayıt</a></li>
+        <li><a href="kayitlar.html">Kayıtlar</a></li>
+        <li><a href="siparis.html">Sipariş</a></li>
+        <li><a href="siparisler.html">Siparişler</a></li>
+        <li><a href="iletisim.html">İletişim</a></li>
+        <li><a href="galeri.html">Galeri</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Sipariş Ver</h1>
+    <form id="siparisForm">
+      <label for="isim">Ad Soyad:</label><br />
+      <input type="text" id="isim" required /><br /><br />
+
+      <label for="urun">Ürün Seçin:</label><br />
+      <select id="urun" required>
+        <option value="">Seçiniz</option>
+        <option value="Gül Esansı">Gül Esansı</option>
+        <option value="Okyanus Ferahlığı">Okyanus Ferahlığı</option>
+        <option value="Gece Bahçesi">Gece Bahçesi</option>
+      </select><br /><br />
+
+      <label for="adet">Adet:</label><br />
+      <input type="number" id="adet" min="1" required /><br /><br />
+
+      <button type="submit">Siparişi Kaydet</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Parfüm Dünyası | Tüm Hakları Saklıdır.</p>
+  </footer>
+
+  <script src="scripts/myscript.js"></script>
+</body>
+</html>
